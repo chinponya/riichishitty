@@ -43,7 +43,12 @@ An alternative way would be to patch the Lua source to use plain HTTP/WS.
 The game servers still listen on these port, so this should work, but I won't go into the detail here.
 
 ### Linux specific advice
-The problem with overriding domains in `/etc/hosts` is that it will also affect your proxy if you don't hardcode the addresses.
+If you don't care about the Websocket traffic (which you shouldn't unless you are writing bots), you can configure a per-process proxy for wine like so:
+```sh
+all_proxy=127.0.0.1:8080 wine path/to/RiichiCity/Mahjong-JP.exe
+```
+
+Websocket traffic doesn't respect this proxy setting, but you can redirect all traffic by changing the host resolution via the `hosts` file. The problem with overriding domains in `/etc/hosts` is that it will also affect your proxy if you don't hardcode the addresses. You probably don't want to bother with that unless you require it.
 On Linux, there's a workaround for that, using namespaces.
 
 ```sh
