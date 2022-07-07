@@ -24,7 +24,7 @@ Use [dnSpy](https://github.com/dnSpyEx/dnSpy/) to get a decent disassembly of it
 
 The generic asset extraction tools don't try to organize the Lua code packed inside the assets.
 If you care about that, you can try an alternative, easier, albeit less precise method of extraction:
-- run the game with `bin/run_n_gun.exe bin/luadump.dll path/to/RiichiCity/Mahjong-JP.exe`
+- run the game with `bin/run_n_gun.exe path/to/RiichiCity/Mahjong-JP.exe bin/luadump.dll`
 - click around the menus to light up as many code paths as possible
 - find your extracted Lua in `luachunks/`
 
