@@ -101,7 +101,7 @@ BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpReserved)
 		if(!AttachConsole(ATTACH_PARENT_PROCESS)) {
 			if(!AllocConsole()) {
 				MessageBox(NULL, "Failed to allocate a new console!\nContinuing anyway, but we're going to be headless for the rest of this!", "luadump", MB_ICONERROR | MB_OK);
-				bool headless = true;
+				headless = true;
 			}
 		}
 		if(!headless) {
